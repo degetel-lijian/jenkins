@@ -1,5 +1,6 @@
 <project name="Plaza" default="run" basedir=".">
   <property name="basedir" value="C://wamp/www/jenkins" />
+  <property name="source" value="${basedir}/src"/>
   <property name="php_bin_path" value="C://wamp/bin/php/php5.5.12/" />
 
   <target name="run" depends="clean, op"/>
