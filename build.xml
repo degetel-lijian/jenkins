@@ -23,11 +23,17 @@
   <!-- Operation -->
   <target name="op" description="Lance les outils d'analyse">
     <phingcall target="phpunit" />
+    <phingcall target="pdepend"/>
   </target>
 
   <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
     <exec logoutput="true"
         command="${php_bin_path}phpunit --configuration=${basedir}/tests/phpunit.xml" />
   </target>
+
+  <target name="pdepend" description="Generate jdepend.xml and software metrics charts using PHP_Depend">
+  <exec logoutput="true"
+        command="${php_bin_path}pdepend --jdepend-xml=${basedir}/build/logs/jdepend.xml --jdepend-chart=${basedir}/build/pdepend/dependencies.svg --overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg ${source}" />
+ </target>
 
 </project>
