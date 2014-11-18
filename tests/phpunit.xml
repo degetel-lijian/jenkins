@@ -13,11 +13,11 @@
   </testsuites>
 
   <logging>
-    <log type="coverage-html" target="build/coverage" title="ExampleProject"
+    <log type="coverage-html" target="C://wamp/www/jenkins/build/coverage" title="ExampleProject"
          charset="UTF-8" yui="true" highlight="true"
          lowUpperBound="35" highLowerBound="70"/>
-    <log type="coverage-clover" target="build/logs/clover.xml"/>
-    <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+    <log type="coverage-clover" target="C://wamp/www/jenkins/build/logs/clover.xml"/>
+    <log type="junit" target="C://wamp/www/jenkins/build/logs/junit.xml" logIncompleteSkipped="false"/>
   </logging>
 
   <filter>
