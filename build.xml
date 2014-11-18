@@ -26,10 +26,7 @@
     <phingcall target="phpunit" />
     <phingcall target="pdepend"/>
     <phingcall target="phpmd"/>
-    <phingcall target="phpcpd"/>
-    <phingcall target="phpcs"/>
-    <phingcall target="phpdoc"/>
-    <phingcall target="phploc"/>
+    
   </target>
 
   <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
@@ -47,24 +44,6 @@
         command="${php_bin_path}phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
  </target>
 
- <target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
-  <exec logoutput="true"
-        command="${php_bin_path}phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
- </target>
-
- <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
-  <exec logoutput="true"
-        command="${php_bin_path}phpcs --report=checkstyle --report-file=${basedir}/build/logs/checkstyle.xml --standard=PSR2 --ignore=Exceptions.php,*_view.php ${source}" />
- </target>
-
- <target name="phpdoc" description="Generate API documentation using APIGen">
-  <exec logoutput="true"
-        command="${php_bin_path}apigen --source ${source} --destination ${basedir}/build/api" />
- </target>
-
- <target name="phploc" description="Generate phploc.csv">
-  <exec logoutput="true"
-        command="${php_bin_path}phploc --log-csv ${basedir}/build/logs/phploc.csv ${source}" />
- </target>
+ 
 
 </project>
