@@ -26,6 +26,7 @@
     <phingcall target="phpunit" />
     <phingcall target="pdepend"/>
     <phingcall target="phpmd"/>
+    <phingcall target="phpcpd"/>
     
   </target>
 
@@ -44,6 +45,11 @@
         command="${php_bin_path}phpmd ${source} xml codesize,design,naming,unusedcode --reportfile ${basedir}/build/logs/pmd.xml" />
  </target>
 
- 
+ <target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
+  <exec logoutput="true"
+        command="${php_bin_path}phpcpd --log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}" />
+ </target>
+
+
 
 </project>
